@@ -18,12 +18,15 @@ function createURI() {
 
       passprnt_uri = passprnt_uri + "back=" + encodeURIComponent(window.location.href);
 
-      if(document.getElementById("mb") !== ''){
-        passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent(`<img src="${document.getElementById("image").value}" style="margin-bottom: ${document.getElementById("mb").value};"/>`);
-      }else{
-        passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent("<img src='"+document.getElementById("image").value+"'/>");
+      // if(document.getElementById("mb") !== ''){
+      //   passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent(`<img src="${document.getElementById("image").value}" style="margin-bottom: ${document.getElementById("mb").value};"/>`);
+      // }else{
+      //   passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent("<img src='"+document.getElementById("image").value+"'/>");
 
-      }
+      // }
+
+          passprnt_uri = passprnt_uri + "&size=4&link=" + document.getElementById("image").value;
+
 
     window.open(passprnt_uri)
 }
