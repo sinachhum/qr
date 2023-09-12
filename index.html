@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -18,29 +18,15 @@ function createURI() {
 
       passprnt_uri = passprnt_uri + "back=" + encodeURIComponent(window.location.href);
 
-      // if(document.getElementById("mb") !== ''){
-      //   passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent(`<img src="${document.getElementById("image").value}" style="margin-bottom: ${document.getElementById("mb").value};"/>`);
-      // }else{
-      //   passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent("<img src='"+document.getElementById("image").value+"'/>");
-
-      // }
-
-          passprnt_uri = passprnt_uri + "&size=4&url=" + document.getElementById("image").value;
-
-
+      passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent("<img src='"+document.getElementById("image").value+"'/>");
     window.open(passprnt_uri)
 }
 </script>
 </head>
 <body>
-  
+
    
-  <div style="display: flex; justify-content: center; gap: 4px; margin-top: 30px;">
-    <input type="text" id="mb" style="width:500px" placeholder="Margin bottom for android (ex: 10px)"/>
-    <br/>
-    <br/>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 4px; margin-top: 20px;">
+  <div style="display: flex; justify-content: center; margin-top: 30px;">
     <input type="text" id="image" style="width:500px" placeholder="image url"/>
     <br/>
     <br/>
