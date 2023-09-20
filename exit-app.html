@@ -37,7 +37,7 @@
                 // using the RegisterHandler
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
-                document.getElementById("momo").innerHTML('Closed!!!')
+                document.getElementById("momo").innerText('Closed!!!')
 
      console.log(res, 111)
    });
