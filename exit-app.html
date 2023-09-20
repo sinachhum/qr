@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://checkout-uat.payway.com.kh/plugins/checkout2-0.js"></script>
+<script>
+
+const req ={
+   merchantName: 'Bookmefly',
+   barTitle: {
+    title: 'Bookmefly',
+    bgColor: '#ff5313',
+    color: '#ffffff',
+    safeAreaColor: '#ffffff'
+   }
+  }
+
+        const profile = {
+            callback: function(res){
+    console.log(res)
+   }
+        }
+    
+        var interval = setInterval(function(){
+        try{
+        AbaPayway.miniApp(req);
+        AbaPayway.miniAppGetProfile(profile);
+        clearInterval(interval);
+        }catch(e){
+        AbaPayway.miniApp(req);
+        AbaPayway.miniAppGetProfile(profile);
+        }
+        }, 100);
+        
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me to hide paragraphs</button>
+
+</body>
+</html>
