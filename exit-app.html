@@ -35,6 +35,9 @@
                
   
                 // using the RegisterHandler
+           AbaPayway.miniAppCallHandler('getProfile').then((res)=>{
+        console.log(res);   });
+          
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
         console.log('working');
