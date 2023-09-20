@@ -31,7 +31,7 @@ const req ={
                // using the RegisterHandler
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
-                document.getElementById("momo").innerText('Closed!!!')
+                document.getElementById("momo").innerHTML('Closed!!!')
 
      console.log(res, 111)
    });
@@ -43,7 +43,7 @@ const req ={
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
 
-        document.getElementById("momo").innerText('Closed!!!')
+        document.getElementById("momo").innerHTML('Closed!!!')
      console.log(res, 111)
    });
         }
