@@ -6,7 +6,13 @@
 <script src="https://checkout-uat.payway.com.kh/plugins/checkout2-0.js"></script>
 <script>
 
-const req ={
+
+
+
+
+     setTimeout(() => {
+
+          const req ={
    merchantName: 'Bookmefly',
    useExitApp: false,
    barTitle: {
@@ -22,23 +28,11 @@ const req ={
     console.log(res)
    }
         }
-    
-        var interval = setInterval(function(){
-        try{
+     
         AbaPayway.miniApp(req);
         AbaPayway.miniAppGetProfile(profile);
 
-              
-        clearInterval(interval);
-        }catch(e){
-        AbaPayway.miniApp(req);
-        AbaPayway.miniAppGetProfile(profile);
-        }
-        }, 100);
-
-
-
-     setTimeout(() => {
+               
   
                 // using the RegisterHandler
    const registerHandlerName = 'closeApp'
