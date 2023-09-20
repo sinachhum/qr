@@ -31,6 +31,8 @@ const req ={
                // using the RegisterHandler
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
+                document.getElementById("momo").text('Closed!!!')
+
      console.log(res, 111)
    });
         clearInterval(interval);
