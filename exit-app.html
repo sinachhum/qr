@@ -28,28 +28,34 @@ const req ={
         AbaPayway.miniApp(req);
         AbaPayway.miniAppGetProfile(profile);
 
-               // using the RegisterHandler
+              
+        clearInterval(interval);
+        }catch(e){
+        AbaPayway.miniApp(req);
+        AbaPayway.miniAppGetProfile(profile);
+   });
+        }
+        }, 100);
+
+
+
+     setTimeout(() => {
+  
+                // using the RegisterHandler
    const registerHandlerName = 'closeApp'
    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
                 document.getElementById("momo").innerHTML('Closed!!!')
 
      console.log(res, 111)
    });
-        clearInterval(interval);
-        }catch(e){
-        AbaPayway.miniApp(req);
-        AbaPayway.miniAppGetProfile(profile);
-               // using the RegisterHandler
-   const registerHandlerName = 'closeApp'
-   AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
 
-        document.getElementById("momo").innerHTML('Closed!!!')
-     console.log(res, 111)
-   });
-        }
-        }, 100);
+          
+}, 2000);
+     
 
 
+
+     
   
 </script>
 </head>
