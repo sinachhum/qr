@@ -6,33 +6,34 @@
 
 <script>
   $( document ).ready(function() {
- $("button").click(function(){
- fetch('https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U')
-.then(function(response) {
-    return response.blob()
-  })
-.then(function(blob) {
+ $("button").click(function(){ 
+ if ('canShare' in navigator) {
+  const share = async function(shareimg, shareurl, sharetitle, sharetext) {
+    try {
+      const response = await fetch('https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U');
+      const blob = await response.blob();
+      const file = new File([blob], 'rick.jpg', {type: blob.type});
 
-    var file = new File([blob], "Name-image-whith-extension", {type: 'image/jpg'});
-    var filesArray = [file];
-    var shareData = { files: filesArray };
-
-
-    if (navigator.canShare && navigator.canShare(shareData)) {
-
-    // Adding title afterwards as navigator.canShare just
-    // takes files as input
-    shareData.title = "Name"
-
-    navigator.share(shareData)
-    .then(() => console.log('Share was successful.'))
-    .catch((error) => console.log('Sharing failed', error));
-
-    } else {
-    console.log("Your system doesn't support sharing files.");
+      await navigator.share({
+        url: shareurl,
+        title: sharetitle,
+        text: sharetext,
+        files: [file]
+      });
+    } catch (err) {
+      console.log(err.name, err.message);
     }
- 
-});
+  };
+  
+  document.querySelector('button').addEventListener('click', () => {
+    share(
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rick_Astley_Dallas.jpg/267px-Rick_Astley_Dallas.jpg',
+      'https://en.wikipedia.org/wiki/Rick_Astley',
+      'Rick Astley',
+      'Never gonna give you up!'
+    );
+  });  
+}
     });
    
     });
