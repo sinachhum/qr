@@ -6,11 +6,34 @@
 
 <script>
   $( document ).ready(function() {
+ 
+    fetch('https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U')
+.then(function(response) {
+    return response.blob()
+  })
+.then(function(blob) {
 
-    const image = await fetch('https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U');
-const blob = await image.blob();
-const file = new File([blob], 'image.jpg', { type: 'image/jpeg' });
-navigator.share({ text: 'some_text', files: [file] } as ShareData);
+    var file = new File([blob], "Name-image-whith-extension", {type: 'image/jpeg'});
+    var filesArray = [file];
+    var shareData = { files: filesArray };
+
+
+    if (navigator.canShare && navigator.canShare(shareData)) {
+
+    // Adding title afterwards as navigator.canShare just
+    // takes files as input
+    shareData.title = "Name"
+
+    navigator.share(shareData)
+    .then(() => console.log('Share was successful.'))
+    .catch((error) => console.log('Sharing failed', error));
+
+    } else {
+    console.log("Your system doesn't support sharing files.");
+    }
+ 
+});
+    
     });
  
   
