@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body>
-    <h1>Web Share in third-party iframes</h1>
-    <!-- The embedding page is hosted on https://example.com/index.html. -->
-        <iframe allow="web-share" src="https://checkout-uat.payway.com.kh/checkout/eyJzdGF0dXMiOnsiY29kZSI6IjAwIiwibGFuZyI6ImttIn0sInN0ZXAiOiJraHFyX3JlcXVlc3RfcXIiLCJxcl9zdHJpbmciOiIwMDAyMDEwMTAyMTIzMDUxMDAxNmFiYWFraHBweHh4QGFiYWEwMTE1MzE2MTAwNzcwMTEwMDAxMDIwOEFCQSBCYW5rNTIwNDAwMDA1MzAzODQwNTQwMTU1ODAyS0g1OTE2VUFUIENhcmQgcGF5bWVudDYwMDNOXC9BNjIzNDA1MTE5REI2MDEyMjg0NzA3MTVGM0QxMTY5NTI4MDE1NjI5OTUyMDAxM0YxQkYwMTY0MTFGREE2ODE0UFdPbmxpbmVQVy0yLTA2OTA4cHVyY2hhc2U3MDAxMDYzMDQ4MjlGIiwiZXhwaXJlX2luIjo2MTY5NTI4MDE2MSwiZXhwaXJlX2luX3NlYyI6IjYwMDAwMDAwMDAwIiwiYWJhX2RhdGEiOiJjOVdtK1ZzRzlOREhtXC9CTHU2dzFUZjlEbXo2ekVXNm9RZE5vdzdxRGRJQUpNQUZ3V0l5YVgxUjZoS3VaelU3K1UzTDNGenoxZ1VoQTZEckljbGY2cFNreG4zbUk0VDVWS0NpRVprUURZbzJcL2EyMkhtc3dGXC9PNVBLSndiUE04bVF2eGs0bmlYM1wvR3FnalhvTEFZc3ZnPT0iLCJ0b2tlbl90aW1lIjoxNjk1MjgwMTYxLCJ0b2tlbiI6IkRlWXdnd1RSU0VlNW9JREpLMmVuZDVMcGozWjNxNFwvdTM5aUJDaTB0VGJTV3JzZmg1QlVxbThQWU52MnJMMkNhbGtMV0hCdmZXSGlkSVZaWTJjc3lnWlRFZHh1MHo0RFl3RkpveVEzZlZIdz0iLCJkb3dubG9hZF9xciI6Imh0dHBzOlwvXC9jaGVja291dC11YXQucGF5d2F5LmNvbS5raFwvYXBpXC9wYXltZW50LWdhdGV3YXlcL3YxXC9wYXltZW50c1wvZG93bmxvYWQtY2hlY2tvdXQtcXI%2FYWJhX2RhdGE9ZWtFeU9WTlJUVUZ2WkhSSE5XVnFZbXRMYTB4YVNYRkpZM2tyZURodk1UUmphMHREZFRFMkwyTjBXa0Y0UldSbU9EbFdMM0ZFYURscGFtNDBWa2s0UkRGUWNrNUVia1ZKT0c5ME1FbFRiRWMyV0ZONU1FUXpjSGgxY2xwS2NIZENTMHh2ZUZScFVYWm9aazA5IiwidHJhbnNhY3Rpb25fc3VtbWFyeSI6eyJvcmRlcl9kZXRhaWxzIjp7Im9yZGVyX2lkIjoiMTY5NTI4MDE1NjIiLCJzdWJ0b3RhbCI6NSwidmF0X2VuYWJsZWQiOiIwIiwidmF0IjowLCJzaGlwcGluZyI6MCwidmF0X2Ftb3VudCI6MCwidHJhbnNhY3Rpb25fZmVlIjowLCJ0b3RhbCI6NSwiY3VycmVuY3kiOiJVU0QifSwibWVyY2hhbnQiOnsibmFtZSI6IlVBVCBDYXJkIHBheW1lbnQiLCJsb2dvIjoiaHR0cHM6XC9cL3B3YXBwLXN0YWdpbmcuYWJhYmFuay5jb21cL21lcmNoYW50c1wvbWVyY2hhbnQtbG9nb1wvdWF0X2NhcmRfcGF5bWVudF8xNjc5NDUzMTAzLnBuZyIsInByaW1hcnlfY29sb3IiOiIjMDBiY2Q0IiwiY2FuY2VsX3VybCI6IiIsInRoZW1lcyI6ImRlZmF1bHQiLCJmb250X2ZhbWlseSI6IlNGX1Byb19EaXNwbGF5IiwiZm9udF9zaXplIjoxNCwiYmdfY29sb3IiOiIjZmZmZmZmIiwiYm9yZGVyX3JhZGl1cyI6Nn19LCJwYXltZW50X29wdGlvbnMiOnsiYmFrb25nIjp7ImxhYmVsIjoiS0hRUiJ9fX0="></iframe>
-
+  <script src="https://checkout-uat.payway.com.kh/plugins/checkout2-0.js"/>
+    <script>
+      setTimeout(() => {
+          AbaPayway.checkout()
+        }, 5000)
+      </script>
+  <body> 
+   <div id="aba_main_modal" class="aba-modal"><div class="aba-modal-content"><form id="aba_merchant_request" method="POST" target="aba_webservice" action="https://checkout-uat.payway.com.kh/api/payment-gateway/v1/payments/purchase"><!----> <input type="hidden" name="hash"> <input type="hidden" name="merchant_id" value="ec000003"> <input type="hidden" name="is_vat" value="0"> <input type="hidden" name="tran_id" value="ec15160429802"> <input type="hidden" name="amount"> <input type="hidden" name="currency" value="USD"> <input type="hidden" name="firstname" value="sina"> <input type="hidden" name="lastname" value="chhum"> <input type="hidden" name="email"> <input type="hidden" name="phone"> <input type="hidden" name="items"> <input type="hidden" name="payment_option"> <input type="hidden" name="req_time" value="1695285719"> <input type="hidden" name="shipping"> <input type="hidden" name="invoicing_tool_url" value="https://merchant-uat.ababank.com/invoices/NXo0eXhpWFlGZWtIc01hRW1NVVVDZ2NWSGNjdEdFVFNBcEV3blRUZ3VsK3BkbnVIcE82azBRTlpxNGwyZC9PYg=="></form></div></div>
   </body>
 </html>
