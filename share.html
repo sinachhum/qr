@@ -5,17 +5,15 @@
      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <script>
-  $( document ).ready(function() {
- $("button").click(function(){ 
+  $( document ).ready(function() { 
  if ('canShare' in navigator) {
-  const share = async function(shareimg, shareurl, sharetitle, sharetext) {
+  const share = async function(shareimg, sharetitle, sharetext) {
     try {
       const response = await fetch('https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U');
       const blob = await response.blob();
       const file = new File([blob], 'rick.jpg', {type: blob.type});
 
-      await navigator.share({
-        url: shareurl,
+      await navigator.share({ 
         title: sharetitle,
         text: sharetext,
         files: [file]
@@ -27,16 +25,13 @@
   
   document.querySelector('button').addEventListener('click', () => {
     share(
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rick_Astley_Dallas.jpg/267px-Rick_Astley_Dallas.jpg',
-      'https://en.wikipedia.org/wiki/Rick_Astley',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rick_Astley_Dallas.jpg/267px-Rick_Astley_Dallas.jpg', 
       'Rick Astley',
       'Never gonna give you up!'
     );
   });  
 }
-    });
-   
-    });
+    }); 
  
   
 </script>
