@@ -5,8 +5,7 @@
      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <script>
-  $( document ).ready(function() { 
- if ('canShare' in navigator) {
+  $( document ).ready(function() {  
   const share = async function(shareimg, sharetitle, sharetext) {
     try {
       const response = await fetch('https://fastly.picsum.photos/id/116/200/300.jpg?hmac=uPAnc-n8DQQ64MK4BNdh5H0jZftgEJ1sWpFPDBHni5o');
@@ -29,8 +28,7 @@
       'Rick Astley',
       'Never gonna give you up!'
     );
-  });  
-}
+  }); 
     }); 
  
   
