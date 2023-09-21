@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <script src="https://checkout-uat.payway.com.kh/plugins/checkout2-0-dev.js?hide-close=2"/>
-    <script>
+
+  <body> 
+   <div id="aba_main_modal" class="aba-modal"><div class="aba-modal-content"><form id="aba_merchant_request" method="POST" target="aba_webservice" action="https://checkout-uat.payway.com.kh/api/payment-gateway/v1/payments/purchase"><!----> <input type="hidden" name="hash"> <input type="hidden" name="merchant_id" value="ec000003"> <input type="hidden" name="is_vat" value="0"> <input type="hidden" name="tran_id" value="ec15160429802"> <input type="hidden" name="amount"> <input type="hidden" name="currency" value="USD"> <input type="hidden" name="firstname" value="sina"> <input type="hidden" name="lastname" value="chhum"> <input type="hidden" name="email"> <input type="hidden" name="phone"> <input type="hidden" name="items"> <input type="hidden" name="payment_option"> <input type="hidden" name="req_time" value="1695285719"> <input type="hidden" name="shipping"> <input type="hidden" name="invoicing_tool_url" value="https://merchant-uat.ababank.com/invoices/NXo0eXhpWFlGZWtIc01hRW1NVVVDZ2NWSGNjdEdFVFNBcEV3blRUZ3VsK3BkbnVIcE82azBRTlpxNGwyZC9PYg=="></form></div></div>
+  </body>
+        <script>
       setTimeout(() => {
           AbaPayway.checkout()
         }, 5000)
       </script>
-  <body> 
-   <div id="aba_main_modal" class="aba-modal"><div class="aba-modal-content"><form id="aba_merchant_request" method="POST" target="aba_webservice" action="https://checkout-uat.payway.com.kh/api/payment-gateway/v1/payments/purchase"><!----> <input type="hidden" name="hash"> <input type="hidden" name="merchant_id" value="ec000003"> <input type="hidden" name="is_vat" value="0"> <input type="hidden" name="tran_id" value="ec15160429802"> <input type="hidden" name="amount"> <input type="hidden" name="currency" value="USD"> <input type="hidden" name="firstname" value="sina"> <input type="hidden" name="lastname" value="chhum"> <input type="hidden" name="email"> <input type="hidden" name="phone"> <input type="hidden" name="items"> <input type="hidden" name="payment_option"> <input type="hidden" name="req_time" value="1695285719"> <input type="hidden" name="shipping"> <input type="hidden" name="invoicing_tool_url" value="https://merchant-uat.ababank.com/invoices/NXo0eXhpWFlGZWtIc01hRW1NVVVDZ2NWSGNjdEdFVFNBcEV3blRUZ3VsK3BkbnVIcE82azBRTlpxNGwyZC9PYg=="></form></div></div>
-  </body>
 </html>
