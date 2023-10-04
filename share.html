@@ -13,7 +13,6 @@
       const file = new File([blob], 'rick.jpg', {type: blob.type});
 
       await navigator.share({ 
-        title: sharetitle,
         files: [file]
       });
     } catch (err) {
