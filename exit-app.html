@@ -6,51 +6,32 @@
 <script src="https://checkout.payway.com.kh/plugins/checkout2-0.js"></script>
 <script>
 
+const req = {
+    merchantName: 'Garden City Water Park',
+    barTitle: {
+        title: 'Garden City Water Park',
+        bgColor: '#246DB6',
+        color: '#ffffff',
+        safeAreaColor: '#ffffff'
+    }
+}
 
+const profile = {
+    callback: function (res) {
+        console.log(res) 
+    }
+}
 
-
-
-     setTimeout(() => {
-
-          const req ={
-   merchantName: 'Bookmefly',
-               // useExitApp: false,
-   barTitle: {
-    title: 'Bookmefly',
-    bgColor: '#ff5313',
-    color: '#ffffff',
-    safeAreaColor: '#ffffff'
-   }
-  }
-
-        const profile = {
-            callback: function(res){
-    console.log(res)
-   }
-        }
-     
+var interval = setInterval(function () {
+    try {
         AbaPayway.miniApp(req);
         AbaPayway.miniAppGetProfile(profile);
-
-               
-  
-                // using the RegisterHandler
-//            AbaPayway.miniAppCallHandler('getProfile').then((res)=>{
-//         console.log(res);   });
-          
-//    const registerHandlerName = 'closeApp'
-//    AbaPayway.miniAppRegisterHandler(registerHandlerName).then((res)=>{
-//         console.log('working');
-// document.getElementById('replace-me').innerText = 'Closed!!!'
-
-//    });
-
-          
-}, 2000);
-     
-
-
-
+        clearInterval(interval);
+    } catch (e) {
+        AbaPayway.miniApp(req);
+        AbaPayway.miniAppGetProfile(profile);
+    }
+}, 100);
      
   
 </script>
