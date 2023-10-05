@@ -6,6 +6,13 @@
 <script src="https://checkout.payway.com.kh/plugins/checkout2-0.js"></script>
 <script>
 
+      
+window.addEventListener("popstate", (event) => {
+	AbaPayway.miniAppExit(); 
+});
+
+
+     
 const req = {
     merchantName: 'Garden City Water Park',
     barTitle: {
