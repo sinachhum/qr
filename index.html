@@ -9,6 +9,38 @@ $(document).ready(function(){
   $("button").click(function(){
     createURI()
   });
+To open another app from a Chrome mobile browser using JavaScript, you can use the "intent://" or "urlscheme://" protocol. Note that this method may not work for all apps, as it depends on whether the app supports deep linking and has registered a custom URL scheme. Here's a basic example:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open App Example</title>
+</head>
+<body>
+
+<button onclick="openApp()">Open App</button>
+
+<script>
+function openApp() {
+  // Replace 'yourapp://' with the custom URL scheme of the app you want to open
+  var appScheme = 'starpassprnt://v1/print/nopreview?size=4&back';
+
+  // Try to open the app
+  window.location.href = appScheme;
+
+  // If the app is not installed, redirect to the app store or a fallback URL
+  setTimeout(function() {
+    window.open('starpassprnt://v1/print/nopreview?size=4&back');
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
 });
 
 var passprnt_uri;
