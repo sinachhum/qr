@@ -16,12 +16,8 @@ function openApp() {
   var appScheme = 'starpassprnt://v1/print/nopreview?size=4/=/';
 
   // Try to open the app
-  window.location.href = appScheme;
-
-  // If the app is not installed, redirect to the app store or a fallback URL
-  setTimeout(function() {
-    window.location.href = 'starpassprnt://v1/print/nopreview?size=5';
-  }, 1000);
+  window.open(appScheme);
+ 
 }
 </script>
 
