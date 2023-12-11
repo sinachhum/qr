@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    createURI()
-  });
-To open another app from a Chrome mobile browser using JavaScript, you can use the "intent://" or "urlscheme://" protocol. Note that this method may not work for all apps, as it depends on whether the app supports deep linking and has registered a custom URL scheme. Here's a basic example:
 
-html
-Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,44 +13,17 @@ Copy code
 <script>
 function openApp() {
   // Replace 'yourapp://' with the custom URL scheme of the app you want to open
-  var appScheme = 'starpassprnt://v1/print/nopreview?size=4&back';
+  var appScheme = 'starpassprnt://v1/print/nopreview?size=4/=/';
 
   // Try to open the app
   window.location.href = appScheme;
 
   // If the app is not installed, redirect to the app store or a fallback URL
   setTimeout(function() {
-    window.open('starpassprnt://v1/print/nopreview?size=4&back');
+    window.location.href = 'starpassprnt://v1/print/nopreview?size=5';
   }, 1000);
 }
 </script>
 
-</body>
-</html>
-});
-
-var passprnt_uri;
-
-function createURI() {
-      passprnt_uri = "starpassprnt://v1/print/nopreview?";
-
-      passprnt_uri = passprnt_uri + "back=" + encodeURIComponent(window.location.href);
-  
-
-passprnt_uri = passprnt_uri + "&size=4&html=" + encodeURIComponent("<img style='margin-left:0; margin-top:0px;' src='https://qr-indol.vercel.app/1.png'/>");
-  window.open(passprnt_uri)
-}
-</script>
-</head>
-<body>
-
-   
-  <div style="display: flex; justify-content: center; margin-top: 30px;">
-    <input type="text" id="image" style="width:500px" placeholder="image url"/>
-    <br/>
-    <br/>
-
-    <button style="width:100px; margin-left: 10px;">Print</button>
-  </div>
 </body>
 </html>
